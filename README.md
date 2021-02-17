@@ -1,27 +1,33 @@
-# GenreMap
+# Genre Map #
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+The goal of this project is to map out the genres of music I listen to, across the time dimension to produce a visual map over time of where my musical brain itch has been, and what exactly has scratched it.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Background : ##
+---
+I've always been fascinated with the evolution and cyclic nature of music tastes and what triggers the tectonic shift from genre to genre.
+A prime example of this would be my first week in February I spent binging the artist 'High Priest of Saturn' - a Psychadelic Norwegian Doom Metal band, categorized by Spotify; I then spent most of the second and third weeks of the same month listening to 'Pusha T', 'Kendrick Lamar' and 'Logic' - each of which strongly rooted in the rap genre, with elements of gangster rap and 'concious' rap ... whatever the fuck that is.
 
-## Code scaffolding
+## Concept : ##
+---
+A small application similar to Spotify Unwrapped but on a more indepth scale to identify trends in music genre shifts and also highlight artists by association which I would otherwise have missed or not found as quickly - all of this in a very visual format.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ideally I would then open this to a small group of people to test if successful, though I am not entirely deluded as I know that is a long way off - especially with my tendancy to focus on whatever next week's grand idea will be.
 
-## Build
+## Implementation : ##
+---
+MVP : 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+An angular application which connects to Spotify, grabs my playlists and focuses on a designated playlist - in this case my GenreMap playlist - then uses the datetime I have added the tracks to form a map of the genres of each tune; traversable over time via a slider or some better control if I find one
 
-## Running unit tests
+## Bonus Points : ##
+---
+Specific playlist selection via GUI
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Profile switching capability
 
-## Running end-to-end tests
+Utilization of Personalization API
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Super Bonus Points : ##
+---
+Fancy schmancy CSS 
