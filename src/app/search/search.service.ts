@@ -1,36 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Artist } from '../models/artist';
 import { environment } from 'src/environments/environment';
-
-// Well this file needs to not be like this at all.
-// However! This does work at the moment but is clearly, the most primitive form it could take
-let token = "TOKEN_GOES_HERE";
+import { map } from 'rxjs/operators';
+import { TokenStorageService } from '../shared/token-storage.service';
 
 const headers = new HttpHeaders()
   .set("Accept", "application/json")
-  .set("Content-Type", "application/json")
-  .set("Authorization", 'Bearer ' + token);
+  .set("Content-Type", "application/json");
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  constructor(private http: HttpClient) { }
-
-
+  constructor(
+    private http: HttpClient) {}
 
   searchArtists(searchTerm: string): Observable<any> {
     let url = this.getSearchUrl('artist', searchTerm);
 
-    return this.http.get(url, {headers});
+    return this.http.get<any>(url, {headers});
   }
 
   private getSearchUrl(type: string, searchTerm: string): string {
-    return `https://api.spotify.com/v1/search?` +
+    return `${environment.baseSpotifyApi}search?` +
             `q=${searchTerm}&` +
             `type=${type}`;
   }
+
+
+
 }
  

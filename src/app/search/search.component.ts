@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Artist } from '../models/artist';
 import { SearchService } from './search.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { SearchService } from './search.service';
 export class SearchComponent implements OnInit {
   inputField: FormControl = new FormControl();
   searchTerm: string = "";
-  artists: any;
+  artists: Artist[] = [];
 
   constructor(private searchService: SearchService) { }
 
@@ -24,14 +25,12 @@ export class SearchComponent implements OnInit {
   }
 
   search(): void {
-    this.searchService.searchArtists(this.searchTerm)
-      .subscribe(res => {
-        console.log(res);
-        this.artists = res.artists.items;
-
-        console.log(this.artists);
-        
-    })
+    if(this.searchTerm > '') {
+      this.searchService.searchArtists(this.searchTerm)
+        .subscribe(res => {
+          this.artists = res.artists.items;
+      })
+    }
   }
 
 }
