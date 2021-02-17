@@ -32,3 +32,26 @@ Utilization of Personalization API
 ## Super Bonus Points : ##
 
 Fancy schmancy CSS 
+
+---
+## Credits : ##
+As much as I would absolutely love to say "here mate am the best in the world at this shit", realistically this will - as per every project ever - be the product of a whole load of resource gathering n playdough-ing it into an angular project. As is the way.
+
+This is a log of items watched or read which I've then implemented and bastardised for future reference.
+
+```csharp OrderBy
+return await creditList
+    .OrderBy(x => x.Type.ArbitraryWeightValueThatIMadeUpToFormatTheTable)
+    .ThenBy(x => x.TimeAccessedRelativeToProject)
+    .ToListAsync();
+```
+
+|Type|Author|Gist|Areas Covered|Link|
+|---|---|---|---|:---:|
+|Documentation|Spotify|Web API Reference|Spotify API Interaction|[Cheers Mate](https://developer.spotify.com/documentation/web-api/reference/)|
+|Documentation|ReadMe|Engine Reference to practice fannying about|ReadMe Documentation|[Cheers Mate](https://rdmd.readme.io/docs/)|
+|Video|Code Like A Boss|Search artists using the Spotify API|Spotify API Interaction|[Cheers Mate](https://www.youtube.com/watch?v=3R_Mu_UaNvo)|
+|Article|Deven (CodeSource)|Error Handling in Angular Applications|Http error handling|[Cheers Mate](https://codesource.io/error-handling-angular/)|
+|Article|Angular University|HttpClient Quickstart|HttpClient|[Cheers Mate](https://blog.angular-university.io/angular-http/)|
+|Article|bezKoder|Angular 11 JWT Authentication - big shout out to this dude|HttpClient, Authentication, JWT|[Cheers Mate](https://bezkoder.com/angular-11-jwt-auth/)|
+
