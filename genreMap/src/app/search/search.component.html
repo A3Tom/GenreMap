@@ -1,0 +1,19 @@
+<h1>Search for an artist</h1>
+
+<section>
+    <div>
+        <input [formControl]="inputField" type="text">
+    </div>
+
+    <button (click)="search()">Seach Spotify</button>
+
+    <div *ngIf="artists !== undefined">
+        <ul>
+            <li *ngFor="let artist of artists">
+                <p>Name : {{artist.name}} ({{artist.followers.total}})</p>
+                <p>Genres : {{artist.genres}}</p>
+                <a href="{{artist.external_urls.spotify}}">View on spotify</a>
+            </li>
+        </ul>
+    </div>
+</section>
