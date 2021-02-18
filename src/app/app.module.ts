@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { HttpInterceptorClass } from './shared/HttpInterceptor';
+import { MostListenedComponent } from './most-listened/most-listened.component';
+import { SearchService } from './search/search.service';
+import { MostListenedService } from './most-listened/most-listened.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    MostListenedComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,9 @@ import { HttpInterceptorClass } from './shared/HttpInterceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorClass,
       multi: true
-    }
+    },
+    SearchService,
+    MostListenedService
   ],
   bootstrap: [AppComponent]
 })
