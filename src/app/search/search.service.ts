@@ -18,13 +18,11 @@ export class SearchService {
     return this.http.get<any>(url, {headers});
   }
 
+  //TODO: Make virtual method for this in a base class
   private getUrl(type: string, searchTerm: string): string {
     return `${environment.baseSpotifyApi}search?` +
             `q=${searchTerm}&` +
             `type=${type}`;
   }
-
-
-
 }
  
